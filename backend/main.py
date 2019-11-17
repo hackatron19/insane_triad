@@ -3,35 +3,29 @@
 import numpy as np
 import pandas as pd
 import sys, json
-from itertools import chain 
 
-
-l2=[]
-#Read data from stdin
 def read_in():
     lines = sys.stdin.readlines()
     # Since our input would only be having one line, parse our JSON data from that
     return json.loads(lines[0])
 
 def main():
-    #get our data as an array from read in()
-    lines = read in().split('.\n')
+    lines = read_in().split('.\n')
+    
+    l2=list(lines)
+    return l2
+l1=main()
+#print(l1)
+result=[]
+for i in l1:
+    i.strip(" ")
+    if i!='':
 
-    # Sum  of all the items in the providen array
-    l2.append(lines)
-l1 = list(chain.from_iterable(l2))
+        new=i.replace(" ","_")
+        k=new.lstrip('_')
+        result.append(k)
 
-
-
-
-
-
-
-
-
-
-
-
+#print(result)
 
 
 
@@ -51,26 +45,53 @@ l1 = list(chain.from_iterable(l2))
 
 
 
-l1=['back pain','constipation','abdominal pain','diarrhoea','mild fever','yellow urine',
-'yellowing of eyes','acute liver failure','fluid overload','swelling of stomach',
-'swelled lymph nodes','malaise','blurred and distorted vision','phlegm','throat irritation',
-'redness of eyes','sinus pressure','runny nose','congestion','chest pain','weakness in limbs',
-'fast heart rate','pain during bowel movements','pain in anal region','bloody stool',
-'irritation in anus','neck pain','dizziness','cramps','bruising','obesity','swollen legs',
-'swollen blood vessels','puffy face and eyes','enlarged thyroid','brittle nails',
-'swollen extremeties','excessive hunger','extra marital contacts','drying and tingling lips',
-'slurred speech','knee pain','hip joint pain','muscle weakness','stiff neck','swelling joints',
-'movement stiffness','spinning movements','loss of balance','unsteadiness',
-'weakness of one body side','loss of smell','bladder discomfort','foul smell of urine',
-'continuous feel of urine','passage of gases','internal itching','toxic look (typhos)',
-'depression','irritability','muscle pain','altered sensorium','red spots over body','belly pain',
-'abnormal menstruation','dischromic  patches','watering from eyes','increased appetite','polyuria','family history','mucoid sputum',
-'rusty sputum','lack of concentration','visual disturbances','receiving blood transfusion',
-'receiving unsterile injections','coma','stomach bleeding','distention of abdomen',
-'history of alcohol consumption','fluid overload','blood in sputum','prominent veins on calf',
-'palpitations','painful walking','pus filled pimples','blackheads','scurring','skin peeling',
-'silver like dusting','small dents in nails','inflammatory nails','blister','red sore around nose',
-'yellow crust ooze']
+
+
+
+
+l1=['back_pain','constipation','abdominal_pain','diarrhoea','mild_fever','yellow_urine',
+'yellowing_of_eyes','acute_liver_failure','fluid_overload','swelling_of_stomach',
+'swelled_lymph_nodes','malaise','blurred_and_distorted_vision','phlegm','throat_irritation',
+'redness_of_eyes','sinus_pressure','runny_nose','congestion','chest_pain','weakness_in_limbs',
+'fast_heart_rate','pain_during_bowel_movements','pain_in_anal_region','bloody_stool',
+'irritation_in_anus','neck_pain','dizziness','cramps','bruising','obesity','swollen_legs',
+'swollen_blood_vessels','puffy_face_and_eyes','enlarged_thyroid','brittle_nails',
+'swollen_extremeties','excessive_hunger','extra_marital_contacts','drying_and_tingling_lips',
+'slurred_speech','knee_pain','hip_joint_pain','muscle_weakness','stiff_neck','swelling_joints',
+'movement_stiffness','spinning_movements','loss_of_balance','unsteadiness',
+'weakness_of_one_body_side','loss_of_smell','bladder_discomfort','foul_smell_of urine',
+'continuous_feel_of_urine','passage_of_gases','internal_itching','toxic_look_(typhos)',
+'depression','irritability','muscle_pain','altered_sensorium','red_spots_over_body','belly_pain',
+'abnormal_menstruation','dischromic _patches','watering_from_eyes','increased_appetite','polyuria','family_history','mucoid_sputum',
+'rusty_sputum','lack_of_concentration','visual_disturbances','receiving_blood_transfusion',
+'receiving_unsterile_injections','coma','stomach_bleeding','distention_of_abdomen',
+'history_of_alcohol_consumption','fluid_overload','blood_in_sputum','prominent_veins_on_calf',
+'palpitations','painful_walking','pus_filled_pimples','blackheads','scurring','skin_peeling',
+'silver_like_dusting','small_dents_in_nails','inflammatory_nails','blister','red_sore_around_nose',
+'yellow_crust_ooze']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 disease=['Fungal infection','Allergy','GERD','Chronic cholestasis','Drug Reaction',
 'Peptic ulcer diseae','AIDS','Diabetes','Gastroenteritis','Bronchial Asthma','Hypertension',
@@ -132,13 +153,13 @@ def DecisionTree():
     clf3 = clf3.fit(X,y)
 
     # calculating accuracy-------------------------------------------------------------------
-    #from sklearn.metrics import accuracy score
-    #y pred=clf3.predict(X test)
-    #print(accuracy score(y test, y pred))
-    #print(accuracy score(y test, y pred,normalize=False))
+    #from sklearn.metrics import accuracy_score
+    #y_pred=clf3.predict(X_test)
+    #print(accuracy_score(y_test, y_pred))
+    #print(accuracy_score(y_test, y_pred,normalize=False))
     # -----------------------------------------------------
 
-    psymptoms = l1  #[Symptom1,Symptom2,Symptom3,Symptom4,Symptom5]
+    psymptoms = result
 
     for k in range(0,len(l1)):
         # print (k,)

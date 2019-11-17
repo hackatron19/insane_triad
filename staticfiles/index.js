@@ -19,7 +19,7 @@ function speak()
        var utterThis = new SpeechSynthesisUtterance(inputTxt.value);
       utterThis.lang='Female(en-US)';
       utterThis.pitch=1.5;
-      utterThis.rate=2;
+      utterThis.rate=1;
        synth.speak(utterThis);
 
        utterThis.onend = function (event)

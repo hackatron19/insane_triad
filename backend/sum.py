@@ -1,7 +1,6 @@
 
 
 import sys, json
-l2=[]
 #Read data from stdin
 def read_in():
     lines = sys.stdin.readlines()
@@ -11,9 +10,8 @@ def read_in():
 def main():
     #get our data as an array from read_in()
     lines = read_in().split('.\n')
-
+    l2=list(lines)
     # Sum  of all the items in the providen array
-    l2.append(lines)
     print(l2)
     #return the sum to the output stream
    # print (total_sum_inArray)
