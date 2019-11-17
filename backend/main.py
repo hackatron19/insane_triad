@@ -27,28 +27,6 @@ for i in l1:
 
 #print(result)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 l1=['back_pain','constipation','abdominal_pain','diarrhoea','mild_fever','yellow_urine',
 'yellowing_of_eyes','acute_liver_failure','fluid_overload','swelling_of_stomach',
 'swelled_lymph_nodes','malaise','blurred_and_distorted_vision','phlegm','throat_irritation',
@@ -69,28 +47,6 @@ l1=['back_pain','constipation','abdominal_pain','diarrhoea','mild_fever','yellow
 'palpitations','painful_walking','pus_filled_pimples','blackheads','scurring','skin_peeling',
 'silver_like_dusting','small_dents_in_nails','inflammatory_nails','blister','red_sore_around_nose',
 'yellow_crust_ooze']
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 disease=['Fungal infection','Allergy','GERD','Chronic cholestasis','Drug Reaction',
@@ -174,7 +130,12 @@ def DecisionTree():
     #ans='no'
     for a in range(0,len(disease)):
         if(predicted == a):
-            print(disease[a])
+            ans=disease[a]
             #ans='yes'
             break
+    return ans
+file1=open("myfile.txt","w")
+file1.write(DecisionTree())
+
+
 DecisionTree()

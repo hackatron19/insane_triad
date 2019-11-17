@@ -72,8 +72,11 @@ scriptExecution.on('exit', (code) => {
     console.log("Process quit with code : " + code)
     
 });
-//res.writeHead(200,{'Content-Type':'text/html'});
-  //  res.end(m);
+res.writeHead(200,{'Content-Type':'text/html'});
+  res.write(m);
+})
+app.get('/disease',(req,res)=>{
+    res.sendFile('/home/gaurav/strange_D_frontend/backend/myfile.txt')
 })
 app.listen(3000);
 

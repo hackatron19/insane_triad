@@ -18,7 +18,7 @@ function speak()
      { 
        var utterThis = new SpeechSynthesisUtterance(inputTxt.value);
       utterThis.lang='Female(en-US)';
-      utterThis.pitch=1.5;
+      utterThis.pitch=1.0;
       utterThis.rate=1;
        synth.speak(utterThis);
 
@@ -45,8 +45,8 @@ console.log(inputTxt);
  
   speech.lang='en-US'
 	speech.text = 'Hello dear, This is strange d at your service , what should i call you';
-	speech.rate = 1;
-	speech.pitch = 1;
+	speech.rate = 1.0;
+	speech.pitch = 1.0;
   document.getElementById('txt').innerText=speech.text;
 	setTimeout(()=>{synth.speak(speech);}, 1500);
 
@@ -123,3 +123,9 @@ $('#start-btn').on('click', function(e){
         });
        }
      });
+$('#result').on('click',()=>{
+  $.ajax({
+    method:'GET',
+    url:'/disease'
+  })
+})
